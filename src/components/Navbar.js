@@ -4,10 +4,15 @@ import '../App.css';
 function Navbar() {
   return (
     <>
-      <h1 style={{ fontSize: '50px', color: 'red' }}>Navbar</h1>
-      <p className="para">This is a Navbar</p>
-      <h1 className="text-center text-4xl text-red-700">Navbar</h1>
-      <p className="para">This is a Navbar</p>
+      <nav className='bg-sky-950 h-13'>
+      <div className='space-x-4 text-white text-right p-6'>
+        <a href="/logo"><img src="/tailwind.jpg" alt="rohith"></img></a>
+        <a href='/docs'>Docs</a> 
+        <a href='/components'>Components</a>
+        <a href='/Blog'>Blog</a>
+        <a href='/Showcase'>Showcase</a>
+      </div>
+      </nav>
     </>
   );
 }

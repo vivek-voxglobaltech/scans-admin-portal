@@ -41,3 +41,7 @@
   color: blue;
   font-size: '30px';
 }
+a:hover{
+  color: skyblue;
+  opacity: 500;
+}
