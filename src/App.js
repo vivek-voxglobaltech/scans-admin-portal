@@ -4,10 +4,11 @@ import Footer from './components/Footer';
 import About from './components/About';
 
 function App() {
+  const name = 'Hello World';
   return (
     <>
       <Navbar />
-      <Home />
+      <Home homeName={name} />
       <About />
       <Footer />
     </>
