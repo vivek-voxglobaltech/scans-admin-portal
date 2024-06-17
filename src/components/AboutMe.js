@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import MyContext from './MyContext';
 
-const Home = () => {
+function AboutMe() {
   const name = useContext(MyContext);
   return (
     <>
-      <h1>Hi, {name}</h1>
+      <h1 className="text-green-600">Hi,again! {name}</h1>
     </>
   );
-};
+}
 
-export default Home;
+export default AboutMe;

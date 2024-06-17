@@ -1,17 +1,15 @@
-import Navbar from './components/Navbar';
+import { useState } from 'react';
 import Home from './components/Home';
-import Footer from './components/Footer';
 import About from './components/About';
+import MyContext from './components/MyContext';
 
 function App() {
-  const name = 'Hello World';
+  const [name, setName] = useState('Vivek');
   return (
-    <>
-      <Navbar />
-      <Home homeName={name} />
+    <MyContext.Provider value={name}>
+      <Home />
       <About />
-      <Footer />
-    </>
+    </MyContext.Provider>
   );
 }
 export default App;
