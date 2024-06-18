@@ -1,30 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../App.css';
 
 function Navbar() {
   const [showMobileNav, setShowMobileNav] = useState(false);
 
-  const [counter, setCounter] = useState(0);
-
-  const [counterIncreased, setCounterIncreased] = useState('');
-
   const showMobileNavigation = () => {
     setShowMobileNav(!showMobileNav);
   };
-
-  const counterIncrement = () => {
-    const increment = counter + 1;
-    setCounter(increment);
-  };
-
-  useEffect(() => {
-    if (counter === 5) {
-      setCounterIncreased('Yes counter is increased to 5');
-    } else if (counter < 5) {
-      setCounterIncreased('Yes counter is lessthan 5');
-    }
-  }, [counter]);
 
   return (
     <nav className="bg-slate-900 border-gray-200 lg:px-48 sm:px-4 py-2.5 shadow-md">
@@ -61,20 +45,28 @@ function Navbar() {
             <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lgmd:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
               <>
                 <li>
-                  <a
-                    href="/"
+                  <Link
+                    to="/"
                     className="block py-2 pl-3 pr-4 text-white rounded md:border-0 md:p-0 font-manrope transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 font-semibold"
                   >
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/about"
+                  <Link
+                    to="/about"
                     className="block py-2 pl-3 pr-4 text-white rounded md:border-0 md:p-0 font-manrope transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 font-semibold"
                   >
                     About
-                  </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/login"
+                    className="block py-2 pl-3 pr-4 text-white rounded md:border-0 md:p-0 font-manrope transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 font-semibold"
+                  >
+                    Login
+                  </Link>
                 </li>
               </>
             </ul>
@@ -83,25 +75,28 @@ function Navbar() {
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 text-neutral-700">
               <li>
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="flex items-center leading-7 py-2 pl-3 pr-4 text-white rounded hover:bg-white md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0 font-manrope transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 font-semibold"
                 >
-                  Home {counter} {counterIncreased}
-                </a>
+                  Home
+                </Link>
               </li>
               <li>
-                <a
-                  href="/about"
+                <Link
+                  to="/about"
                   className="flex items-center leading-7 py-2 pl-3 pr-4 text-white rounded hover:bg-white md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0 font-manrope transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 font-semibold"
                 >
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <button type="button" onClick={counterIncrement}>
-                  Counter Increment
-                </button>
+                <Link
+                  to="/login"
+                  className="flex items-center leading-7 py-2 pl-3 pr-4 text-white rounded hover:bg-white md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0 font-manrope transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 font-semibold"
+                >
+                  Login
+                </Link>
               </li>
             </ul>
           </div>
