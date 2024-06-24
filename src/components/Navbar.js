@@ -62,6 +62,14 @@ function Navbar() {
                 </li>
                 <li>
                   <Link
+                    to="/todos"
+                    className="block py-2 pl-3 pr-4 text-white rounded md:border-0 md:p-0 font-manrope transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 font-semibold"
+                  >
+                    Todos
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     to="/login"
                     className="block py-2 pl-3 pr-4 text-white rounded md:border-0 md:p-0 font-manrope transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 font-semibold"
                   >
@@ -88,6 +96,14 @@ function Navbar() {
                   className="flex items-center leading-7 py-2 pl-3 pr-4 text-white rounded hover:bg-white md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0 font-manrope transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 font-semibold"
                 >
                   About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/todos"
+                  className="flex items-center leading-7 py-2 pl-3 pr-4 text-white rounded hover:bg-white md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0 font-manrope transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 font-semibold"
+                >
+                  Todos
                 </Link>
               </li>
               <li>
