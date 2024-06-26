@@ -18,6 +18,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="*" element={<FourNotFour />} />
           <Route path="/todos" element={<AddTodo />} />
+          <Route path="/todos/edit/:id" />
         </Routes>
       </MyContext.Provider>
     </Router>
