@@ -6,6 +6,8 @@ import Home from './components/Home';
 import About from './components/About';
 import FourNotFour from './components/FourNotFour';
 import AddTodo from './components/AddTodo';
+import Login from './components/Login';
+import Registration from './components/Registration';
 
 function App() {
   const [name, setName] = useState('Vivek');
@@ -18,6 +20,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="*" element={<FourNotFour />} />
           <Route path="/todos" element={<AddTodo />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/sign-up" element={<Registration />} />
           <Route path="/todos/edit/:id" />
         </Routes>
       </MyContext.Provider>
