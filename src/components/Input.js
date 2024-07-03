@@ -1,6 +1,13 @@
 import React from 'react';
 
-function Input({ fieldName, fieldType, register, errors, validation }) {
+function Input({
+  fieldName,
+  fieldType,
+  register,
+  errors,
+  validation,
+  onChange,
+}) {
   return (
     <div className="space-y-1">
       <label
@@ -14,9 +21,12 @@ function Input({ fieldName, fieldType, register, errors, validation }) {
         id={fieldName}
         name={fieldName}
         className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-200"
-        {...register(fieldName, { ...validation })}
+        {...register(fieldName, {
+          onChange: (e) => onChange && onChange(e),
+          ...validation,
+        })}
       />
-      {errors[fieldName] && <span>This field is required</span>}
+      {errors[fieldName] && errors[fieldName].message}
     </div>
   );
 }

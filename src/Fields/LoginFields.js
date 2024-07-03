@@ -2,11 +2,11 @@ export const Fields = [
   {
     fieldName: 'username',
     fieldType: 'text',
-    validationObj: { required: true },
+    validationObj: { required: 'Username is required' },
   },
   {
     fieldName: 'password',
     fieldType: 'password',
-    validationObj: { required: true },
+    validationObj: { required: 'Password is required' },
   },
 ];
