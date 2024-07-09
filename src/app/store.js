@@ -1,5 +1,6 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import todoReducer from './features/todo/todoSlice';
+import userReducer from './features/user/userSlice';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 
@@ -9,7 +10,7 @@ const persistConfig = {
   storage,
 };
 
-const reducer = combineReducers({ todoReducer });
+const reducer = combineReducers({ todoReducer, userReducer });
 
 const persistedReducer = persistReducer(persistConfig, reducer);
 

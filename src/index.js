@@ -7,6 +7,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -17,6 +19,7 @@ root.render(
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <App />
+        <ToastContainer theme="colored" />
       </PersistGate>
     </Provider>
   </React.StrictMode>

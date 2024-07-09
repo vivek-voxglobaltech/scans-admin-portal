@@ -2,16 +2,31 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import Input from '../components/Input';
 import { Fields } from '../Fields/RegistrationFields';
+import { useDispatch } from 'react-redux';
+import { registerUser } from '../app/features/user/userSlice';
+import { toast } from 'react-toastify';
 
 const Registration = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({ mode: 'onChange' });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const dispatch = useDispatch();
+
+  const onSubmit = async (data) => {
+    try {
+      dispatch(registerUser(data)).then((res) =>
+        toast.success(res.payload.message)
+      );
+      reset();
+    } catch (error) {
+      toast.error(error);
+      console.log('🚀 ~ file: Registration.js:31 ~ onSubmit ~ error:', error);
+      reset();
+    }
   };
 
   return (
